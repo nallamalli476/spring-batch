@@ -1,0 +1,37 @@
+server:
+  port: 7035
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/user_db
+    username: postgres
+    password: ravi@1993
+    
+  batch:
+      job:
+        enabled: false
+      initialize-schema: always
+      
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: update
+    show_sql: true
+    
+  redis:
+    host: localhost
+    port: 6379
+    ttl: 60000
+    connectionTimeout: 5000
+    commandTimeout: 60000
+
+app:
+ async:
+   enabled: true
+   core-pool-size: 10
+   max-pool-size: 20
+   queue-capacity: 100
+   
+   
+   
